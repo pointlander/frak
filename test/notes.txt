@@ -1,0 +1,16 @@
+original:
+20.385%   53439b github.com/pointlander/compress
+jpeg:
+19.781%   51854b github.com/pointlander/compress
+png:
+18.958%   49698b github.com/pointlander/compress
+paeth8 only:
+18.994%   49792b github.com/pointlander/compress
+none:
+18.367%   48149b github.com/pointlander/compress
+forms buffer:
+18.195%   47697b github.com/pointlander/compress
+individually compressed:
+100.000%  44493b github.com/pointlander/compress
+with x,y shift:
+100.000%  44441b github.com/pointlander/compress
