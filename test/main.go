@@ -44,7 +44,7 @@ func main() {
 	input = resize.Resize(uint(width), uint(height), input, resize.NearestNeighbor)
 
 	gray := frak.Gray(input)
-	frak.FractalCoderNext(gray, 4, fcpBuffer)
+	frak.FractalCoderRandomMark3(gray, 4, fcpBuffer)
 	length := fcpBuffer.Len()
 
 	file, err = os.Create(name + ".png")
@@ -65,7 +65,7 @@ func main() {
 	file.Write(fcpBuffer.Bytes())
 	file.Close()
 
-	decoded := frak.FractalDecoderNext(fcpBuffer, 4)
+	/*decoded := frak.FractalDecoderNext(fcpBuffer, 4)
 
 	file, err = os.Create(name + "_decoded.png")
 	if err != nil {
@@ -76,7 +76,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	file.Close()
+	file.Close()*/
 
 	compress_test := func() (int, string) {
 		return length, "github.com/pointlander/compress"

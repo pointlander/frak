@@ -697,6 +697,7 @@ func FractalCoderNext(in image.Image, panelSize int, out io.Writer) {
 		betaBuffer.Write(b[:])
 	}
 
+	totalError := 0
 	for _, dPanel := range destination.panels {
 		var best imagePanel
 		bestError, bestForm, bestBeta := uint64(math.MaxUint64), 0, 0
@@ -725,6 +726,7 @@ func FractalCoderNext(in image.Image, panelSize int, out io.Writer) {
 				break
 			}
 		}
+		totalError += int(bestError)
 		forms[bestForm]++
 		write16(uint16(best.x >> shift))
 		write16(uint16(best.y >> shift))
@@ -732,6 +734,7 @@ func FractalCoderNext(in image.Image, panelSize int, out io.Writer) {
 		writeBeta(uint8(int8(bestBeta>>1) + 127))
 		count++
 	}
+	fmt.Println(totalError)
 
 	write32 := func(i uint32) {
 		b := [...]byte{

@@ -14,3 +14,13 @@ individually compressed:
 100.000%  44493b github.com/pointlander/compress
 with x,y shift:
 100.000%  44441b github.com/pointlander/compress
+
+
+error for next:
+ 2633529
+error for random mark 1:
+50494021
+error for random mark 2:
+27665770
+error for random mark 3:
+27644508
